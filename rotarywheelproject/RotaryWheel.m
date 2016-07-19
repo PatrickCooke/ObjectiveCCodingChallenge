@@ -19,6 +19,8 @@
 @end
 
 static float deltaAngle;
+static float minAlphavalue = 0.6;
+static float maxAlphavalue = 1.0;
 
 @implementation RotaryWheel
 
@@ -49,6 +51,9 @@ static float deltaAngle;
                                         container.bounds.size.height/2.0);
         im.transform = CGAffineTransformMakeRotation(angleSize * i);
         im.tag = i;
+        // 5.5
+        void CGContextAddArc ( CGContextRef c, CGFloat x, CGFloat y, CGFloat radius, CGFloat startAngle, CGFloat endAngle, int clockwise );
+        
         // 6
         [container addSubview:im];
     }
