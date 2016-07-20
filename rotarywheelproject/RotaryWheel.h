@@ -19,6 +19,7 @@
 @property (nonatomic, strong) NSMutableArray *sectors;
 @property int currentSector;
 
+
 - (id) initWithFrame:(CGRect)frame andDelegate:(id)del withSections:(int)sectionsNumber;
 - (void) rotate;
 

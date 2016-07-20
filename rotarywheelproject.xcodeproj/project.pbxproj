@@ -320,6 +320,7 @@
 				43BBAC481D3ACBF600C9C6E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

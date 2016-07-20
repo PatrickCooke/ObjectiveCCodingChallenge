@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "RotaryWheel.h"
 
+
 @interface ViewController ()
 
 @end
@@ -34,6 +35,8 @@
     [self.view addSubview:wheel];
     
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

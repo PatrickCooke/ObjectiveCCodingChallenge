@@ -19,8 +19,10 @@
 @end
 
 static float deltaAngle;
-static float minAlphavalue = 0.6;
-static float maxAlphavalue = 1.0;
+//static float minAlphavalue = 0.6;
+//static float maxAlphavalue = 1.0;
+//NSArray *colors = @[@"blueColor", @"redColor", @"greenColor", @"purpleColor"];
+
 
 @implementation RotaryWheel
 
@@ -39,9 +41,69 @@ static float maxAlphavalue = 1.0;
 - (void) drawWheel {
     container = [[UIView alloc] initWithFrame:self.frame];
     CGFloat angleSize = 2*M_PI/numberOfSections;
+//    NSArray *wheelColors = [NSArray arrayWithObjects:@"blueColor", @"redColor", @"greenColor", @"purpleColor",nil];
     self.currentSector = 0;
     for (int i = 0; i < numberOfSections; i++) {
         // 4
+        UIBezierPath *shape = [UIBezierPath bezierPathWithArcCenter:CGPointMake(container.center.x, container.center.y) radius:100 startAngle:10 endAngle:45 clockwise:true];
+        CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+        shapeLayer.path = shape.CGPath;
+        switch (i) {
+            case 0:
+                shapeLayer.fillColor = [UIColor blueColor].CGColor;
+                break;
+            case 1:
+                shapeLayer.fillColor = [UIColor greenColor].CGColor;
+                break;
+            case 2:
+                shapeLayer.fillColor = [UIColor redColor].CGColor;
+                break;
+            case 3:
+                shapeLayer.fillColor = [UIColor purpleColor].CGColor;
+                break;
+            default:
+                shapeLayer.fillColor = [UIColor clearColor].CGColor;
+                break;
+        }
+        shapeLayer.strokeColor = [UIColor blackColor].CGColor;
+        shapeLayer.lineWidth = 2;
+        
+        [container.layer addSublayer:shapeLayer];
+        
+//        CGPoint center = CGPointMake(CGRectGetWidth(self.bounds) / 2.f, CGRectGetHeight(self.bounds) / 2.f);
+//        CGFloat radius = center.x - 10.f;
+//        
+//        
+//        UIBezierPath *portionPath = [UIBezierPath bezierPath];
+//        [portionPath moveToPoint:center];
+//        [portionPath addArcWithCenter:center radius:radius startAngle:0.f endAngle:angleSize clockwise:YES];
+//        [portionPath closePath];
+//        
+//        [[UIColor greenColor] setFill];
+//        [portionPath fill];
+//        
+//        UIBezierPath *portionPath1 = [UIBezierPath bezierPath];
+//        [portionPath1 moveToPoint:center];
+//        [portionPath1 addArcWithCenter:center radius:radius startAngle:M_PI_2 endAngle:M_PI clockwise:YES];
+//        [portionPath1 closePath];
+//        
+//        [[UIColor blueColor] setFill];
+//        [portionPath1 fill];
+//        
+//        
+//        [container.layer addSublayer:portionPath];
+//        [container.layer addSublayer:portionPath1];
+//        UIView *mm = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 250)];
+//        mm.clipsToBounds = true;
+//        mm.backgroundColor = [UIColor redColor];
+//        mm.layer.anchorPoint = CGPointMake(1.0f, 0.5f);
+//        mm.layer.position = CGPointMake(container.bounds.size.width/2.0,
+//                                        container.bounds.size.height/2.0);
+//        mm.transform = CGAffineTransformMakeRotation(angleSize * i);
+//        mm.tag=i;
+//        
+//        [container addSubview:mm];
+        
         UILabel *im = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
         im.backgroundColor = [UIColor redColor];
         im.text = [NSString stringWithFormat:@"%i", i];
@@ -51,10 +113,8 @@ static float maxAlphavalue = 1.0;
                                         container.bounds.size.height/2.0);
         im.transform = CGAffineTransformMakeRotation(angleSize * i);
         im.tag = i;
-        // 5.5
-        void CGContextAddArc ( CGContextRef c, CGFloat x, CGFloat y, CGFloat radius, CGFloat startAngle, CGFloat endAngle, int clockwise );
         
-        // 6
+//         6
         [container addSubview:im];
     }
     // 7

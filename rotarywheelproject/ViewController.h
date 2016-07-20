@@ -12,5 +12,6 @@
 
 @property (nonatomic, strong) UILabel *sectorLabel;
 
+
 @end
 
