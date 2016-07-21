@@ -17,6 +17,8 @@
 
 @synthesize sectorLabel;
 
+
+
 - (void) wheelDidChangeValue:(NSString *)newValue {
     self.sectorLabel.text = newValue;
 }
@@ -32,7 +34,7 @@
     RotaryWheel *wheel = [[RotaryWheel alloc] initWithFrame:CGRectMake(0, 0, 200, 200) andDelegate:self withSections:4];
      wheel.center = CGPointMake(self.view.center.x , self.view.center.y);
     [self.view addSubview:wheel];
-    
+
     
 }
 

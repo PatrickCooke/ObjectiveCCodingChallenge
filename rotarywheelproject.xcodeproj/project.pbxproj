@@ -16,7 +16,58 @@
 		43BBAC4B1D3ACC2A00C9C6E2 /* RotaryWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BBAC4A1D3ACC2A00C9C6E2 /* RotaryWheel.m */; };
 		43BBAC4E1D3ACEB000C9C6E2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BBAC4D1D3ACEB000C9C6E2 /* QuartzCore.framework */; };
 		43BBAC511D3BF0B700C9C6E2 /* Sector.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BBAC501D3BF0B700C9C6E2 /* Sector.m */; };
+		43BBAC821D41100200C9C6E2 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43BBAC801D41100200C9C6E2 /* Interface.storyboard */; };
+		43BBAC841D41100200C9C6E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43BBAC831D41100200C9C6E2 /* Assets.xcassets */; };
+		43BBAC8B1D41100200C9C6E2 /* SwiftWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 43BBAC8A1D41100200C9C6E2 /* SwiftWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		43BBAC921D41100200C9C6E2 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BBAC911D41100200C9C6E2 /* InterfaceController.swift */; };
+		43BBAC941D41100200C9C6E2 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BBAC931D41100200C9C6E2 /* ExtensionDelegate.swift */; };
+		43BBAC961D41100200C9C6E2 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BBAC951D41100200C9C6E2 /* NotificationController.swift */; };
+		43BBAC981D41100200C9C6E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43BBAC971D41100200C9C6E2 /* Assets.xcassets */; };
+		43BBAC9C1D41100200C9C6E2 /* SwiftWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 43BBAC7E1D41100200C9C6E2 /* SwiftWatch.app */; };
+		43BBACAB1D417D6F00C9C6E2 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BBACAA1D417D6F00C9C6E2 /* WatchConnectivity.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		43BBAC8C1D41100200C9C6E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43BBAC271D3ACBF600C9C6E2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 43BBAC891D41100200C9C6E2;
+			remoteInfo = "SwiftWatch Extension";
+		};
+		43BBAC9A1D41100200C9C6E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43BBAC271D3ACBF600C9C6E2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 43BBAC7D1D41100200C9C6E2;
+			remoteInfo = SwiftWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		43BBACA01D41100200C9C6E2 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				43BBAC8B1D41100200C9C6E2 /* SwiftWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43BBACA41D41100200C9C6E2 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				43BBAC9C1D41100200C9C6E2 /* SwiftWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		43BBAC2F1D3ACBF600C9C6E2 /* rotarywheelproject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rotarywheelproject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,6 +86,21 @@
 		43BBAC4D1D3ACEB000C9C6E2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		43BBAC4F1D3BF0B700C9C6E2 /* Sector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sector.h; sourceTree = "<group>"; };
 		43BBAC501D3BF0B700C9C6E2 /* Sector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sector.m; sourceTree = "<group>"; };
+		43BBAC7E1D41100200C9C6E2 /* SwiftWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		43BBAC811D41100200C9C6E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		43BBAC831D41100200C9C6E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		43BBAC851D41100200C9C6E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43BBAC8A1D41100200C9C6E2 /* SwiftWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SwiftWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		43BBAC901D41100200C9C6E2 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		43BBAC911D41100200C9C6E2 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		43BBAC931D41100200C9C6E2 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		43BBAC951D41100200C9C6E2 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		43BBAC971D41100200C9C6E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		43BBAC991D41100200C9C6E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43BBACA51D4113F000C9C6E2 /* rotarywheelproject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = rotarywheelproject.entitlements; sourceTree = "<group>"; };
+		43BBACA61D41141E00C9C6E2 /* SwiftWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SwiftWatch.entitlements; sourceTree = "<group>"; };
+		43BBACA71D41142D00C9C6E2 /* SwiftWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "SwiftWatch Extension.entitlements"; sourceTree = "<group>"; };
+		43BBACAA1D417D6F00C9C6E2 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +108,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43BBACAB1D417D6F00C9C6E2 /* WatchConnectivity.framework in Frameworks */,
 				43BBAC4E1D3ACEB000C9C6E2 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43BBAC871D41100200C9C6E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,8 +126,11 @@
 		43BBAC261D3ACBF600C9C6E2 = {
 			isa = PBXGroup;
 			children = (
+				43BBACAA1D417D6F00C9C6E2 /* WatchConnectivity.framework */,
 				43BBAC4D1D3ACEB000C9C6E2 /* QuartzCore.framework */,
 				43BBAC311D3ACBF600C9C6E2 /* rotarywheelproject */,
+				43BBAC7F1D41100200C9C6E2 /* SwiftWatch */,
+				43BBAC8E1D41100200C9C6E2 /* SwiftWatch Extension */,
 				43BBAC301D3ACBF600C9C6E2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,6 +139,8 @@
 			isa = PBXGroup;
 			children = (
 				43BBAC2F1D3ACBF600C9C6E2 /* rotarywheelproject.app */,
+				43BBAC7E1D41100200C9C6E2 /* SwiftWatch.app */,
+				43BBAC8A1D41100200C9C6E2 /* SwiftWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,6 +148,7 @@
 		43BBAC311D3ACBF600C9C6E2 /* rotarywheelproject */ = {
 			isa = PBXGroup;
 			children = (
+				43BBACA51D4113F000C9C6E2 /* rotarywheelproject.entitlements */,
 				43BBAC351D3ACBF600C9C6E2 /* AppDelegate.h */,
 				43BBAC361D3ACBF600C9C6E2 /* AppDelegate.m */,
 				43BBAC381D3ACBF600C9C6E2 /* ViewController.h */,
@@ -95,6 +175,39 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		43BBAC7F1D41100200C9C6E2 /* SwiftWatch */ = {
+			isa = PBXGroup;
+			children = (
+				43BBACA61D41141E00C9C6E2 /* SwiftWatch.entitlements */,
+				43BBAC801D41100200C9C6E2 /* Interface.storyboard */,
+				43BBAC831D41100200C9C6E2 /* Assets.xcassets */,
+				43BBAC851D41100200C9C6E2 /* Info.plist */,
+			);
+			path = SwiftWatch;
+			sourceTree = "<group>";
+		};
+		43BBAC8E1D41100200C9C6E2 /* SwiftWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				43BBACA71D41142D00C9C6E2 /* SwiftWatch Extension.entitlements */,
+				43BBAC911D41100200C9C6E2 /* InterfaceController.swift */,
+				43BBAC931D41100200C9C6E2 /* ExtensionDelegate.swift */,
+				43BBAC951D41100200C9C6E2 /* NotificationController.swift */,
+				43BBAC971D41100200C9C6E2 /* Assets.xcassets */,
+				43BBAC991D41100200C9C6E2 /* Info.plist */,
+				43BBAC8F1D41100200C9C6E2 /* Supporting Files */,
+			);
+			path = "SwiftWatch Extension";
+			sourceTree = "<group>";
+		};
+		43BBAC8F1D41100200C9C6E2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				43BBAC901D41100200C9C6E2 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -105,15 +218,51 @@
 				43BBAC2B1D3ACBF600C9C6E2 /* Sources */,
 				43BBAC2C1D3ACBF600C9C6E2 /* Frameworks */,
 				43BBAC2D1D3ACBF600C9C6E2 /* Resources */,
+				43BBACA41D41100200C9C6E2 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				43BBAC9B1D41100200C9C6E2 /* PBXTargetDependency */,
 			);
 			name = rotarywheelproject;
 			productName = rotarywheelproject;
 			productReference = 43BBAC2F1D3ACBF600C9C6E2 /* rotarywheelproject.app */;
 			productType = "com.apple.product-type.application";
+		};
+		43BBAC7D1D41100200C9C6E2 /* SwiftWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43BBACA11D41100200C9C6E2 /* Build configuration list for PBXNativeTarget "SwiftWatch" */;
+			buildPhases = (
+				43BBAC7C1D41100200C9C6E2 /* Resources */,
+				43BBACA01D41100200C9C6E2 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				43BBAC8D1D41100200C9C6E2 /* PBXTargetDependency */,
+			);
+			name = SwiftWatch;
+			productName = SwiftWatch;
+			productReference = 43BBAC7E1D41100200C9C6E2 /* SwiftWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		43BBAC891D41100200C9C6E2 /* SwiftWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43BBAC9D1D41100200C9C6E2 /* Build configuration list for PBXNativeTarget "SwiftWatch Extension" */;
+			buildPhases = (
+				43BBAC861D41100200C9C6E2 /* Sources */,
+				43BBAC871D41100200C9C6E2 /* Frameworks */,
+				43BBAC881D41100200C9C6E2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SwiftWatch Extension";
+			productName = "SwiftWatch Extension";
+			productReference = 43BBAC8A1D41100200C9C6E2 /* SwiftWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -121,11 +270,36 @@
 		43BBAC271D3ACBF600C9C6E2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Patrick Cooke";
 				TargetAttributes = {
 					43BBAC2E1D3ACBF600C9C6E2 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 6L9J2XXKYC;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					43BBAC7D1D41100200C9C6E2 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 6L9J2XXKYC;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					43BBAC891D41100200C9C6E2 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 6L9J2XXKYC;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -143,6 +317,8 @@
 			projectRoot = "";
 			targets = (
 				43BBAC2E1D3ACBF600C9C6E2 /* rotarywheelproject */,
+				43BBAC7D1D41100200C9C6E2 /* SwiftWatch */,
+				43BBAC891D41100200C9C6E2 /* SwiftWatch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -155,6 +331,23 @@
 				43BBAC421D3ACBF600C9C6E2 /* LaunchScreen.storyboard in Resources */,
 				43BBAC3F1D3ACBF600C9C6E2 /* Assets.xcassets in Resources */,
 				43BBAC3D1D3ACBF600C9C6E2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43BBAC7C1D41100200C9C6E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43BBAC841D41100200C9C6E2 /* Assets.xcassets in Resources */,
+				43BBAC821D41100200C9C6E2 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43BBAC881D41100200C9C6E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43BBAC981D41100200C9C6E2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +366,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		43BBAC861D41100200C9C6E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43BBAC961D41100200C9C6E2 /* NotificationController.swift in Sources */,
+				43BBAC941D41100200C9C6E2 /* ExtensionDelegate.swift in Sources */,
+				43BBAC921D41100200C9C6E2 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		43BBAC8D1D41100200C9C6E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 43BBAC891D41100200C9C6E2 /* SwiftWatch Extension */;
+			targetProxy = 43BBAC8C1D41100200C9C6E2 /* PBXContainerItemProxy */;
+		};
+		43BBAC9B1D41100200C9C6E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 43BBAC7D1D41100200C9C6E2 /* SwiftWatch */;
+			targetProxy = 43BBAC9A1D41100200C9C6E2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		43BBAC3B1D3ACBF600C9C6E2 /* Main.storyboard */ = {
@@ -190,6 +406,14 @@
 				43BBAC411D3ACBF600C9C6E2 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		43BBAC801D41100200C9C6E2 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43BBAC811D41100200C9C6E2 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -283,6 +507,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = rotarywheelproject/rotarywheelproject.entitlements;
 				INFOPLIST_FILE = rotarywheelproject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.appsbypat.rotarywheelproject;
@@ -294,10 +519,79 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = rotarywheelproject/rotarywheelproject.entitlements;
 				INFOPLIST_FILE = rotarywheelproject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.appsbypat.rotarywheelproject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		43BBAC9E1D41100200C9C6E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "SwiftWatch Extension/SwiftWatch Extension.entitlements";
+				INFOPLIST_FILE = "SwiftWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appsbypat.rotarywheelproject.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		43BBAC9F1D41100200C9C6E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "SwiftWatch Extension/SwiftWatch Extension.entitlements";
+				INFOPLIST_FILE = "SwiftWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appsbypat.rotarywheelproject.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		43BBACA21D41100200C9C6E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SwiftWatch/SwiftWatch.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = SwiftWatch_Extension;
+				INFOPLIST_FILE = SwiftWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appsbypat.rotarywheelproject.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		43BBACA31D41100200C9C6E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SwiftWatch/SwiftWatch.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = SwiftWatch_Extension;
+				INFOPLIST_FILE = SwiftWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appsbypat.rotarywheelproject.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
 			name = Release;
 		};
@@ -321,6 +615,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		43BBAC9D1D41100200C9C6E2 /* Build configuration list for PBXNativeTarget "SwiftWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43BBAC9E1D41100200C9C6E2 /* Debug */,
+				43BBAC9F1D41100200C9C6E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		43BBACA11D41100200C9C6E2 /* Build configuration list for PBXNativeTarget "SwiftWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43BBACA21D41100200C9C6E2 /* Debug */,
+				43BBACA31D41100200C9C6E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>SwiftWatch (Notification).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>SwiftWatch.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>rotarywheelproject.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -13,6 +23,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>43BBAC2E1D3ACBF600C9C6E2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>43BBAC7D1D41100200C9C6E2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

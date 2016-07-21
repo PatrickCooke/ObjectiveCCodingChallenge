@@ -19,9 +19,6 @@
 @end
 
 static float deltaAngle;
-//static float minAlphavalue = 0.6;
-//static float maxAlphavalue = 1.0;
-//NSArray *colors = @[@"blueColor", @"redColor", @"greenColor", @"purpleColor"];
 
 
 @implementation RotaryWheel
@@ -151,7 +148,7 @@ static float deltaAngle;
     }
     // 9
     
-    [self.delegate wheelDidChangeValue:[NSString stringWithFormat:@"value is %@", colorNames[self.currentSector]]];
+    [self.delegate wheelDidChangeValue:[NSString stringWithFormat:@"Color is %@", colorNames[self.currentSector]]];
 }
 
 - (void) rotate {
@@ -210,7 +207,7 @@ static float deltaAngle;
             newVal = radians - s.midValue;
             currentSector = s.sector;
         }
-        [self.delegate wheelDidChangeValue:[NSString stringWithFormat:@"value is %@", colorNames[self.currentSector]]];
+        [self.delegate wheelDidChangeValue:[NSString stringWithFormat:@"Color is %@", colorNames[self.currentSector]]];
     }
     // 7 - Set up animation for final rotation
     [UIView beginAnimations:nil context:NULL];
@@ -218,6 +215,36 @@ static float deltaAngle;
     CGAffineTransform t = CGAffineTransformRotate(container.transform, -newVal);
     container.transform = t;
     [UIView commitAnimations];
+    switch (self.currentSector) {
+        case 0:
+            NSLog(@"blue");
+            break;
+        case 1:
+            NSLog(@"purple");
+            break;
+        case 2:
+            NSLog(@"red");
+            break;
+        case 3:
+            NSLog(@"green");
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)registerToNotification {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceivedNSNotification) name:@"com.example.MyAwesomeApp" object:nil];
+    
+    CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), (__bridge const void *)(self), didReceivedDarwinNotification, CFSTR("NOTIFICATION_TO_WATCH"), NULL, CFNotificationSuspensionBehaviorDrop);
+}
+
+void didReceivedDarwinNotification() {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"com.example.MyAwesomeApp" object:nil];
+}
+
+- (void)didReceivedNSNotification {
+    // you can do what you want, Obj-C method
 }
 
 - (float) calculateDistanceFromCenter:(CGPoint)point {
