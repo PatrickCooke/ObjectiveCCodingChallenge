@@ -9,7 +9,6 @@
 #import "ViewController.h"
 #import "RotaryWheel.h"
 
-
 @interface ViewController ()
 
 @end
@@ -33,6 +32,7 @@
     RotaryWheel *wheel = [[RotaryWheel alloc] initWithFrame:CGRectMake(0, 0, 200, 200) andDelegate:self withSections:4];
      wheel.center = CGPointMake(self.view.center.x , self.view.center.y);
     [self.view addSubview:wheel];
+    
     
 }
 

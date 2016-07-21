@@ -41,72 +41,31 @@ static float deltaAngle;
 - (void) drawWheel {
     container = [[UIView alloc] initWithFrame:self.frame];
     CGFloat angleSize = 2*M_PI/numberOfSections;
-//    NSArray *wheelColors = [NSArray arrayWithObjects:@"blueColor", @"redColor", @"greenColor", @"purpleColor",nil];
+    NSArray *colorNames = @[@"Blue",@"Purple",@"Red",@"Green"];
     self.currentSector = 0;
+    
     for (int i = 0; i < numberOfSections; i++) {
         // 4
-        UIBezierPath *shape = [UIBezierPath bezierPathWithArcCenter:CGPointMake(container.center.x, container.center.y) radius:100 startAngle:10 endAngle:45 clockwise:true];
-        CAShapeLayer *shapeLayer = [CAShapeLayer layer];
-        shapeLayer.path = shape.CGPath;
+        UILabel *im = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 70, 40)];
         switch (i) {
             case 0:
-                shapeLayer.fillColor = [UIColor blueColor].CGColor;
+                im.backgroundColor = [UIColor blueColor];
                 break;
             case 1:
-                shapeLayer.fillColor = [UIColor greenColor].CGColor;
+                im.backgroundColor = [UIColor purpleColor];
                 break;
             case 2:
-                shapeLayer.fillColor = [UIColor redColor].CGColor;
+                im.backgroundColor = [UIColor redColor];
                 break;
             case 3:
-                shapeLayer.fillColor = [UIColor purpleColor].CGColor;
+                im.backgroundColor = [UIColor greenColor];
                 break;
             default:
-                shapeLayer.fillColor = [UIColor clearColor].CGColor;
+                im.backgroundColor = [UIColor clearColor];
                 break;
         }
-        shapeLayer.strokeColor = [UIColor blackColor].CGColor;
-        shapeLayer.lineWidth = 2;
-        
-        [container.layer addSublayer:shapeLayer];
-        
-//        CGPoint center = CGPointMake(CGRectGetWidth(self.bounds) / 2.f, CGRectGetHeight(self.bounds) / 2.f);
-//        CGFloat radius = center.x - 10.f;
-//        
-//        
-//        UIBezierPath *portionPath = [UIBezierPath bezierPath];
-//        [portionPath moveToPoint:center];
-//        [portionPath addArcWithCenter:center radius:radius startAngle:0.f endAngle:angleSize clockwise:YES];
-//        [portionPath closePath];
-//        
-//        [[UIColor greenColor] setFill];
-//        [portionPath fill];
-//        
-//        UIBezierPath *portionPath1 = [UIBezierPath bezierPath];
-//        [portionPath1 moveToPoint:center];
-//        [portionPath1 addArcWithCenter:center radius:radius startAngle:M_PI_2 endAngle:M_PI clockwise:YES];
-//        [portionPath1 closePath];
-//        
-//        [[UIColor blueColor] setFill];
-//        [portionPath1 fill];
-//        
-//        
-//        [container.layer addSublayer:portionPath];
-//        [container.layer addSublayer:portionPath1];
-//        UIView *mm = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 250)];
-//        mm.clipsToBounds = true;
-//        mm.backgroundColor = [UIColor redColor];
-//        mm.layer.anchorPoint = CGPointMake(1.0f, 0.5f);
-//        mm.layer.position = CGPointMake(container.bounds.size.width/2.0,
-//                                        container.bounds.size.height/2.0);
-//        mm.transform = CGAffineTransformMakeRotation(angleSize * i);
-//        mm.tag=i;
-//        
-//        [container addSubview:mm];
-        
-        UILabel *im = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
-        im.backgroundColor = [UIColor redColor];
-        im.text = [NSString stringWithFormat:@"%i", i];
+        im.textColor = [UIColor whiteColor];
+        im.text = [NSString stringWithFormat:@"%@", colorNames[i]];
         im.layer.anchorPoint = CGPointMake(1.0f, 0.5f);
         // 5
         im.layer.position = CGPointMake(container.bounds.size.width/2.0,
@@ -114,8 +73,71 @@ static float deltaAngle;
         im.transform = CGAffineTransformMakeRotation(angleSize * i);
         im.tag = i;
         
-//         6
-        [container addSubview:im];
+        //         6
+        //[container addSubview:im];
+        
+        CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+
+        double startA[] = {5*M_PI/4, 7*M_PI/4, M_PI/4, 3*M_PI/4};
+        double endA[] = {3*M_PI/4, 5*M_PI/4, 7*M_PI/4, M_PI/4};
+        BOOL clockwise[] = {false, false, false, false};
+        
+        UIBezierPath *shape = [UIBezierPath
+                               bezierPathWithArcCenter:CGPointMake(container.center.x, container.center.y)
+                               radius:100
+                               startAngle:startA[i]
+                               endAngle: endA[i]
+                               clockwise:clockwise[i]];
+        
+        
+        int cornerX1[] = {-71,-71,71,71};
+        int cornerY1[] = {71,-71,-71,71};
+        int cornerX2[] = {-71,71,71,-71};
+        int cornerY2[] = {-71,-71,71,71};
+        
+        UIBezierPath* trianglePath = [UIBezierPath bezierPath];
+        [trianglePath moveToPoint:CGPointMake(container.center.x,container.center.y)];
+        [trianglePath addLineToPoint:CGPointMake(container.center.x + cornerX1[i],container.center.y + cornerY1[i])];
+        [trianglePath addLineToPoint:CGPointMake(container.center.x +cornerX2[i],container.center.y + cornerY2[i])];
+        
+        [trianglePath setLineWidth:1];
+        [trianglePath closePath];
+        
+        
+        
+        [shape appendPath:trianglePath];
+        
+        shapeLayer.path = shape.CGPath;
+        shapeLayer.strokeColor = [UIColor clearColor].CGColor;
+
+        
+        switch (i) {
+            case 0:
+                shapeLayer.fillColor = [UIColor blueColor].CGColor;
+                shapeLayer.strokeColor = [UIColor blueColor].CGColor;
+
+                break;
+            case 1:
+                shapeLayer.fillColor = [UIColor purpleColor].CGColor;
+                shapeLayer.strokeColor = [UIColor purpleColor].CGColor;
+
+                break;
+            case 2:
+                shapeLayer.fillColor = [UIColor redColor].CGColor;
+                shapeLayer.strokeColor = [UIColor redColor].CGColor;
+
+                break;
+            case 3:
+                shapeLayer.fillColor = [UIColor greenColor].CGColor;
+                shapeLayer.strokeColor = [UIColor greenColor].CGColor;
+
+                break;
+            default:
+                shapeLayer.fillColor = [UIColor clearColor].CGColor;
+                shapeLayer.strokeColor = [UIColor clearColor].CGColor;
+                break;
+        }
+        [container.layer addSublayer:shapeLayer];
     }
     // 7
     container.userInteractionEnabled = NO;
@@ -128,7 +150,8 @@ static float deltaAngle;
         [self buildSectorsOdd];
     }
     // 9
-    [self.delegate wheelDidChangeValue:[NSString stringWithFormat:@"value is %i", self.currentSector]];
+    
+    [self.delegate wheelDidChangeValue:[NSString stringWithFormat:@"value is %@", colorNames[self.currentSector]]];
 }
 
 - (void) rotate {
@@ -162,8 +185,8 @@ static float deltaAngle;
     return YES;
 }
 
-- (void)endTrackingWithTouch:(UITouch*)touch withEvent:(UIEvent*)event
-{
+- (void)endTrackingWithTouch:(UITouch*)touch withEvent:(UIEvent*)event {
+    NSArray *colorNames = @[@"Blue",@"Purple",@"Red",@"Green"];
     // 1 - Get current container rotation in radians
     CGFloat radians = atan2f(container.transform.b, container.transform.a);
     // 2 - Initialize new value
@@ -187,7 +210,7 @@ static float deltaAngle;
             newVal = radians - s.midValue;
             currentSector = s.sector;
         }
-        [self.delegate wheelDidChangeValue:[NSString stringWithFormat:@"value is %i", self.currentSector]];
+        [self.delegate wheelDidChangeValue:[NSString stringWithFormat:@"value is %@", colorNames[self.currentSector]]];
     }
     // 7 - Set up animation for final rotation
     [UIView beginAnimations:nil context:NULL];
