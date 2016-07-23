@@ -8,15 +8,43 @@
 
 import WatchKit
 import Foundation
+import WatchConnectivity
 
 
 
-class InterfaceController: WKInterfaceController {
+class InterfaceController: WKInterfaceController, WCSessionDelegate {
 
     @IBOutlet var colorDisplay: WKInterfaceGroup!
     @IBOutlet var colorlabel: WKInterfaceButton!
+    private let session: WCSession? = WCSession.isSupported() ? WCSession.defaultSession() : nil
+    
+    override init() {
+        super.init()
+        
+        session?.delegate = self
+        session?.activateSession()
+    }
     
     
+    func session(session: WCSession, didReceiveMessage message: [String : AnyObject]) {
+        let newcolor = message["color"] as? String
+        print(newcolor)
+        //Use this to update the UI instantaneously (otherwise, takes a little while)
+        dispatch_async(dispatch_get_main_queue()) {
+            if newcolor!.containsString("blue") {
+                self.colorlabel.setBackgroundColor(UIColor.blueColor())
+            } else if newcolor!.containsString("green") {
+                self.colorlabel.setBackgroundColor(UIColor.greenColor())
+            } else if newcolor!.containsString("red") {
+                self.colorlabel.setBackgroundColor(UIColor.redColor())
+            } else if newcolor!.containsString("purple") {
+                self.colorlabel.setBackgroundColor(UIColor.purpleColor())
+            } else {
+                self.colorlabel.setBackgroundColor(UIColor.blueColor())
+            }
+        }
+        
+    }
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)

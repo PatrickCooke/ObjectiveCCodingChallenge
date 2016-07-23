@@ -623,6 +623,7 @@
 				43BBAC9F1D41100200C9C6E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		43BBACA11D41100200C9C6E2 /* Build configuration list for PBXNativeTarget "SwiftWatch" */ = {
 			isa = XCConfigurationList;
@@ -631,6 +632,7 @@
 				43BBACA31D41100200C9C6E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

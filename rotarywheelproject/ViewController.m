@@ -8,8 +8,10 @@
 
 #import "ViewController.h"
 #import "RotaryWheel.h"
+#import <WatchConnectivity/WatchConnectivity.h>
 
-@interface ViewController ()
+
+@interface ViewController () <WCSessionDelegate>
 
 @end
 
@@ -21,6 +23,17 @@
 
 - (void) wheelDidChangeValue:(NSString *)newValue {
     self.sectorLabel.text = newValue;
+    NSLog(@"viewcontroller print %@",newValue);
+    NSDictionary *applicationData = [[NSDictionary alloc] initWithObjects:@[newValue] forKeys:@[@"color"]];
+    
+    [[WCSession defaultSession] sendMessage:applicationData
+                               replyHandler:^(NSDictionary *reply) {
+                                   //handle reply from iPhone app here
+                               }
+                               errorHandler:^(NSError *error) {
+                                   //catch any errors here
+                               }
+     ];
 }
 
 
@@ -35,7 +48,15 @@
      wheel.center = CGPointMake(self.view.center.x , self.view.center.y);
     [self.view addSubview:wheel];
 
-    
+    if ([WCSession isSupported]) {
+        WCSession *session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+        NSLog(@"WCSession supported");
+    }
+    if ([[WCSession defaultSession] isReachable]) {
+        NSLog(@"WCSession reachable");
+    }
 }
 
 

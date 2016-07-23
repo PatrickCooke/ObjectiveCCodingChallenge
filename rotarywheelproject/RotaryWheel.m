@@ -207,7 +207,7 @@ static float deltaAngle;
             newVal = radians - s.midValue;
             currentSector = s.sector;
         }
-        [self.delegate wheelDidChangeValue:[NSString stringWithFormat:@"Color is %@", colorNames[self.currentSector]]];
+//        [self.delegate wheelDidChangeValue:[NSString stringWithFormat:@"Color is %@", colorNames[self.currentSector]]];
     }
     // 7 - Set up animation for final rotation
     [UIView beginAnimations:nil context:NULL];
@@ -215,6 +215,8 @@ static float deltaAngle;
     CGAffineTransform t = CGAffineTransformRotate(container.transform, -newVal);
     container.transform = t;
     [UIView commitAnimations];
+    [self.delegate wheelDidChangeValue:[NSString stringWithFormat:@"Color is %@", colorNames[self.currentSector]]];
+    
     switch (self.currentSector) {
         case 0:
             NSLog(@"blue");
